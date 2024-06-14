@@ -37,14 +37,14 @@
 #
 # print(res)
 
-n = int(input())
-k = int(input())
-
-r = 0
-for i in range(1, n + 1):
-    r = (r + k) % i
-
-print(r + 1)
+# n = int(input())
+# k = int(input())
+#
+# r = 0
+# for i in range(1, n + 1):
+#     r = (r + k) % i
+#
+# print(r + 1)
 
 # очередь
 import collections
@@ -53,6 +53,8 @@ n = [i for i in range(int(input()))]
 m = int(input())
 deq = collections.deque(enumerate(n))
 while len(deq) > 1:
+    print('deq:', deq)
     deq.rotate(-m)
+    print('deq rotate:', deq)
     deq.pop()
 print(deq[0][0] + 1)
